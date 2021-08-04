@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html#main(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
@@ -8,51 +8,29 @@ html(lang='en')
     link(rel='icon', sizes='32x32', type='image/png', href='/favicon/favicon.png')
     link(rel='stylesheet' media='screen' href='/css/bootstrap-table.min.css')
     link(rel='stylesheet' media='screen' href='/css/bootstrap-toggle.min.css')
-
-    link(rel='stylesheet' media='screen' href='/vendor/simplebar/dist/simplebar.min.css')
-    link(rel='stylesheet' media='screen' href='/vendor/prismjs/themes/prism.css')
-    link(rel='stylesheet' media='screen' href='/vendor/prismjs/plugins/toolbar/prism-toolbar.css')
-    link(rel='stylesheet' media='screen' href='/vendor/prismjs/plugins/line-numbers/prism-line-numbers.css')
+    link(rel='stylesheet' media='screen' href='/css/font-awesome.min.css')
 
     link(rel='stylesheet' media='screen' href='/css/theme.min.css')
     link(rel='stylesheet' media='screen' href='/css/core.css')
+    link(rel='stylesheet' media='screen' href='/css/main.css')
+    
+    // Google Analytics
     script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-2C7J6DL9GR')
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2C7J6DL9GR');
-    script(async='' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3817915416599313' crossorigin='anonymous')
-    
+  
   body(style='background-color: #12263f')
     block content
 
-    script(type="text/javascript" src='/libs/jquery/dist/jquery.min.js')
-    script(type="text/javascript" src='/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')
-
-    script(type="text/javascript" src='/vendor/simplebar/dist/simplebar.min.js')
-    script(type="text/javascript" src='/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/components/prism-core.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/components/prism-markup.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/components/prism-clike.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/components/prism-javascript.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/components/prism-pug.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/plugins/toolbar/prism-toolbar.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js')
-    script(type="text/javascript" src='/vendor/prismjs/plugins/line-numbers/prism-line-numbers.min.js')
-
-    script(type="text/javascript" src='/js/bootstrap-table.min.js')
-    script(type="text/javascript" src='/js/theme.min.js')
-    script(type="text/javascript" src='/js/web3.min.js')
-    script(type="text/javascript" src='/js/moment.min.js')
-
-    script(type="text/javascript" src='/contracts/IStakingRewards.js')
-    script(type="text/javascript" src='/contracts/IERC20.js')
-    script(type="text/javascript" src='/contracts/CryptoBlades.js')
-    script(type="text/javascript" src='/contracts/Characters.js')
-    script(type="text/javascript" src='/contracts/Weapons.js')
-    script(type="text/javascript" src='/contracts/BasicPriceOracle.js')
-
-    script(type="text/javascript" src='/js/utils.js')
-    script(type="text/javascript" src='/js/library.js')
-    script(type="text/javascript" src='/js/core.js')
+    script(type="text/javascript" src='/build/js/vendor-min.js')
+    script(type="text/javascript" src='/build/js/contracts-min.js')
+    script(type="text/javascript" src='/build/js/library-min.js')
+    if page === 'home'
+      script(type="text/javascript" src='/build/js/core-min.js')
+    if page === 'logger'
+      script(type="text/javascript" src='/build/js/fight-min.js')
+    if page === 'calculator'
+      script(type="text/javascript" src='/build/js/calculator-min.js')
